@@ -1,6 +1,6 @@
 # Devin Repository
 
-This repository is a test repository for Devin integration.
+This repository is a test repository for Devin integration. Just to play out to see how Devin works!
 
 ## Overview
 This repository serves as a testing ground for Devin's capabilities in managing and working with GitHub repositories.
