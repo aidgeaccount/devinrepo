@@ -1,7 +1,5 @@
 import { ReactNode } from 'react';
 
-export type { ReactNode };
-
 export interface Note {
   id: number;
   title: string;

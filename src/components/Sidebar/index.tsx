@@ -16,16 +16,20 @@ export const Sidebar = ({
   onTagSelect,
 }: SidebarProps) => {
   return (
-    <aside className="w-64 bg-white border-r p-4">
-      <div className="space-y-4">
+    <aside className="w-64 bg-white dark:bg-gray-900 border-r border-gray-200 
+      dark:border-gray-800 p-6">
+      <div className="space-y-6">
         {/* Categories */}
-        <div>
-          <h2 className="font-semibold mb-2">Categories</h2>
+        <div className="space-y-2">
+          <h2 className="text-sm uppercase tracking-wider text-gray-500 
+            dark:text-gray-400 font-medium">Categories</h2>
           {categories.map(category => (
             <Button
               key={category.id}
               variant="ghost"
-              className="w-full justify-start gap-2 mb-1"
+              className="w-full justify-start gap-2 text-muted-foreground 
+                hover:text-foreground dark:text-gray-400 dark:hover:text-gray-200
+                transition-colors duration-200"
             >
               {category.icon}
               {category.name}
@@ -34,14 +38,17 @@ export const Sidebar = ({
         </div>
 
         {/* Tags */}
-        <div>
-          <h2 className="font-semibold mb-2">Tags</h2>
+        <div className="space-y-2">
+          <h2 className="text-sm uppercase tracking-wider text-gray-500 
+            dark:text-gray-400 font-medium">Tags</h2>
           {allTags.map(tag => (
             <Button
               key={tag}
               variant="ghost"
-              className={`w-full justify-start gap-2 mb-1 ${
-                selectedTags.has(tag) ? 'bg-blue-50 text-blue-600' : ''
+              className={`w-full justify-start gap-2 transition-colors duration-200 ${
+                selectedTags.has(tag) 
+                  ? 'bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary-foreground' 
+                  : 'text-muted-foreground hover:text-foreground dark:text-gray-400 dark:hover:text-gray-200'
               }`}
               onClick={() => onTagSelect(tag)}
             >
